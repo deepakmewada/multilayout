@@ -1,0 +1,96 @@
+
+
+@mixin themable($theme-name, $background-one,$background-two, $brand-primary,$brand-secondary,$brand-danger,$brand-darkblue, $brand-lgtgray, $brand-gray,$brand-darkgray,$brand-black ){
+
+    .#{$theme-name} {
+       background-color:$background-one;
+       padding-top: 30px;
+       padding-bottom: 30px;
+       
+       .form {
+        margin-top: 20px;
+        label {
+            color: $brand-gray;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .form-control {
+            color: $brand-darkgray;
+            border-color: $brand-lgtgray;
+        }
+        .btn-primary {
+            background-color: $brand-secondary;
+            border-color: $brand-secondary;
+            &:hover {
+                background-color: $brand-darkblue;
+                border-color: $brand-darkblue;
+            }
+        }
+    }
+    .form__box {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 30px 25px;
+        border: 1px solid $brand-lgtgray;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        background: $background-two;
+        margin-bottom: 0;
+    }
+    .error__text {
+        font-size: 13px;
+        color: $brand-danger;
+        padding-left: 5px;
+    }
+    .group__horizontal {
+        display: flex;
+        >label {
+            min-width: 200px;
+            padding-top: 9px;
+        }
+        >.input__wrap {
+            width: 260px;
+        }
+    }
+    .form__subtl {
+        font-size: 16px;
+        margin-bottom: 16px;
+        color: $brand-primary;
+    }
+    hr {
+        margin-bottom: 18px;
+        margin-top: 0;
+    }
+    .form-group {
+        margin-bottom: 18px;
+    }
+    .btn__container {
+        display: flex;
+    }
+    .btnlayout__horizontal {
+        padding-left: 200px;
+    }
+    .form__vertical {
+        .btn__container {
+            margin-top: 25px;
+        }
+    }
+    .form__horizontal {
+        .prefilled__text  {
+            display: flex;
+            label {
+                min-width: 200px;
+                padding-top: 9px;
+            }
+        }
+        .btn__container {
+            margin-top: 25px;
+        }
+    }
+    }
+    
+    }
+    
+    @include themable(light, #f2f2f2, #ffffff, #ffbf2e, #004890, #ff0000, #003366, #d5d5d5, #757575, #222222, #000000);
+    
+    @include themable(dark, #656565, #000000, #ffbf2e, #004890, #ff0000, #003366, #d5d5d5, #757575, #222222, #000000);
